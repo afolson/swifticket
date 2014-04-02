@@ -91,3 +91,14 @@ Route::group(array('prefix' => 'tickets'), function() {
 		);
 	});
 });
+
+Route::group(array('prefix' => 'dragon'), function() {
+		
+	// tickets/index
+	Route::get('/',
+			array(
+				'as' => 'dragon',
+				'uses' => 'DragonController@index'
+			)
+	);
+});
