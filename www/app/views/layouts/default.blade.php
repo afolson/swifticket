@@ -11,6 +11,7 @@
 	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">-->
 </head>
 <body>
+	@include('layouts/includes/navbar')
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12">

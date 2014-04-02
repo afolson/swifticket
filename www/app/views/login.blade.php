@@ -1,17 +1,17 @@
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
-		<form class="form-horizontal well">
+		<form class="form-horizontal well" method="POST" action="{{ URL::route('login/butt/login', array(), false) }}">
 			<legend>Staff Login</legend>
 			<div class="form-group">
 				<label class="control-label col-sm-3">Username:</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control">
+					<input type="text" class="form-control" name="username" value="{{{ Input::old('username') }}}">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-3">Password:</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control">
+					<input type="text" class="form-control" name="password">
 				</div>
 			</div>
 			<div class="form-group">
