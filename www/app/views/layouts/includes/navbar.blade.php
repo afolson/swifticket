@@ -13,9 +13,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{{ URL::route('tickets/status', array(), false) }}">Check Status</a></li>
+        <li><a href="{{ URL::to('tickets/status') }}">Check Status</a></li>
       </ul>
-      <a href="{{ URL::route('tickets/create', array(), false) }}" class="btn btn-success navbar-btn navbar-right"><i class="glyphicon glyphicon-plus"></i> Submit A Ticket</a>
+      <a href="{{ URL::to('tickets/create') }}" class="btn btn-success navbar-btn navbar-right"><i class="glyphicon glyphicon-plus"></i> Submit A Ticket</a>
     </div>
   </div>
 </nav>

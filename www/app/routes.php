@@ -12,12 +12,7 @@
 */
 
 // home/index
-Route::get('/',
-		array(
-			'as' => 'home/index',
-			'uses' => 'HomeController@index'
-		)
-);
+Route::get('/', 'HomeController@index');
 
 // Guest filter redirects to '/' if the user is logged in
 Route::group(array('before' => 'guest'), function() {
@@ -25,80 +20,30 @@ Route::group(array('before' => 'guest'), function() {
 	// Group routes to quickly add a consistent prefix to the URL
 	Route::group(array('prefix' => 'login'), function() {
 		
-		// login/index
-		Route::get('/',
-				array(
-					'as' => 'login/index',
-					'uses' => 'LoginController@index'
-				)
-		);
+		Route::get('/', 'LoginController@getLogin');
 
 		Route::group(array('prefix' => 'butt'), function() {
 			
-			// login/butt/login
-			Route::get('/login',
-					array(
-						'as' => 'login/butt/login',
-						'uses' => 'ButtLoginController@login'
-					)
-			);
+			Route::get('/login', 'LoginController@postLogin');
+
 		});
 	});
 });
 
-Route::group(array('prefix' => 'tickets'), function() {
+// We will uncomment this when authentication is working
+// Route::group(array('before' => 'auth'), function() {
+
+	Route::group(array('prefix' => 'tickets'), function() {
+			
+		Route::get('/',			'TicketController@index');
+		Route::get('/create',	'TicketController@getCreate');
+		Route::get('/status',	'TicketController@getStatus');
+
+		Route::group(array('prefix' => 'butt'), function() {
+			
+			Route::post('/create',	'TicketController@postCreate');
+			Route::get('/status',	'TicketController@postStatus');
 		
-	// tickets/index
-	Route::get('/',
-			array(
-				'as' => 'tickets/index',
-				'uses' => 'TicketController@index'
-			)
-	);
-
-	// tickets/create
-	Route::get('/create',
-			array(
-				'as' => 'tickets/create',
-				'uses' => 'TicketController@create'
-			)
-	);
-
-	// tickets/status
-	Route::get('/status',
-			array(
-				'as' => 'tickets/status',
-				'uses' => 'TicketController@status'
-			)
-	);
-
-	Route::group(array('prefix' => 'butt'), function() {
-
-		// tickets/butt/create
-		Route::post('/create',
-				array(
-					'as' => 'tickets/butt/create',
-					'uses' => 'ButtTicketController@create'
-				)
-		);
-
-		// tickets/butt/status
-		Route::get('/status',
-				array(
-					'as' => 'tickets/butt/status',
-					'uses' => 'ButtTicketController@status'
-				)
-		);
+		});
 	});
-});
-
-Route::group(array('prefix' => 'dragon'), function() {
-		
-	// tickets/index
-	Route::get('/',
-			array(
-				'as' => 'dragon',
-				'uses' => 'DragonController@index'
-			)
-	);
-});
+// });
