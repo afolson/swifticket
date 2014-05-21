@@ -1,3 +1,6 @@
+@extends('layouts.default')
+
+@section('content')
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
 		<div class="well">
@@ -11,3 +14,4 @@
 		</div>
 	</div>
 </div>
+@stop

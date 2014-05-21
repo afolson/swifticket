@@ -12,14 +12,14 @@
 </head>
 <body>
 	@include('layouts/includes/navbar')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-12">
-			<br>
-			{{ $content }}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<br>
+				@yield('content')
+			</div>
 		</div>
 	</div>
-</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->

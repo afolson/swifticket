@@ -17,10 +17,4 @@ class BaseController extends Controller {
 		}
 	}
 
-	// Custom function, shortcut for nesting views / content
-	// Access content in nested views with $content
-	protected function render($view, $content = NULL) {
-		$this->layout->content = View::make($view)->with('content', $content);
-	}
-
 }
