@@ -3,12 +3,12 @@
 class TicketController extends BaseController {
 
 	public function index() {
-		return $this->render('tickets/index');
+		return View::make('tickets/index');
 	}
 	
 
 	public function getCreate() {
-		return $this->render('tickets/create');
+		return View::make('tickets/create');
 	}
 
 	public function postCreate() {
