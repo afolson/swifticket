@@ -1,3 +1,6 @@
+@extends('layouts.default')
+
+@section('content')
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
 		<form class="form-horizontal well" method="POST" action="{{ URL::route('login/butt/login', array(), false) }}">
@@ -22,3 +25,4 @@
 		</form>
 	</div>
 </div>
+@stop

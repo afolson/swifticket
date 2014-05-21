@@ -3,7 +3,7 @@
 class LoginController extends BaseController {
 
 	public function getLogin() {
-		return $this->render('login');
+		return View::make('login');
 	}
 
 	public function postLogin() {
