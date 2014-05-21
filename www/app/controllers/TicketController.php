@@ -17,7 +17,7 @@ class TicketController extends BaseController {
 
 
 	public function getStatus() {
-		return $this->render('tickets/status');
+		return View::make('tickets/status');
 	}
 
 	public function postStatus() {
