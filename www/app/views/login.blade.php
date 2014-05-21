@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
-		<form class="form-horizontal well" method="POST" action="{{ URL::route('login/butt/login', array(), false) }}">
+		<form class="form-horizontal well" method="POST" action="{{ URL::to('login/butt/login') }}">
 			<legend>Staff Login</legend>
 			<div class="form-group">
 				<label class="control-label col-sm-3">Username:</label>
