@@ -46,4 +46,17 @@ Route::group(array('before' => 'guest'), function() {
 		
 		});
 	});
+
+	Route::group(array('prefix' => 'admin'), function() {
+			
+		Route::get('/',			'AdminController@index');
+		Route::get('/users',	'AdminController@getUsers');
+		Route::get('/users/view/{id}','AdminController@getUser');
+		Route::get('/settings',	'AdminController@getSettings');
+
+	});
+
 // });
+
+
+
