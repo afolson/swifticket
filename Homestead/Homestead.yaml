@@ -1,0 +1,13 @@
+---
+authorize: /Users/perihelion/.ssh/id_rsa.pub
+
+keys:
+    - /Users/perihelion/.ssh/id_rsa
+
+folders:
+    - map: /Users/perihelion/swifticket
+      to: /home/vagrant/swifticket
+
+sites:
+    - map: homestead.app
+      to: /home/vagrant/swifticket/www/public
